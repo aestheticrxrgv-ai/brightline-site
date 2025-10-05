@@ -1,115 +1,244 @@
 <!DOCTYPE html>
---muted: #f3d7c6; /* warm sand text */
---text: #fff8f3; /* near white warm */
---accent: #fb923c; /* orange */
---accent-2:#f59e0b; /* amber */
---accent-3:#fca5a5; /* rose */
---ok:#34d399;
---max: 1120px;
---radius: 18px;
---ring: rgba(255,255,255,0.12);
---ring-2: rgba(251, 146, 60, 0.35);
-}
-* { box-sizing: border-box; }
-body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, system-ui, sans-serif; }
-a { color: #ffedd5; text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: var(--max); margin:0 auto; padding: 0 20px; }
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AestheticRxRGV — Aesthetics & Telehealth in Mission, Texas</title>
+  <meta name="description" content="AestheticRxRGV in Mission, Texas specializes in Botox®, IV Infusion Therapy, and convenient telehealth visits for common medical conditions. Owned and operated by Joe Garcia, APRN, NP-C. Call or text (956) 404-6294." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Warm, aesthetic-forward palette */
+      --bg: #0f0a07;           /* espresso */
+      --panel:#1a120e;         /* deep panel */
+      --card: #221711;         /* warm card */
+      --muted: #f4d8c7;        /* sand */
+      --text: #fff8f3;         /* warm white */
+      --accent: #fb923c;       /* orange */
+      --accent-2:#f59e0b;      /* amber */
+      --rose:#fca5a5;          /* rose */
+      --ok:#34d399;            /* green */
+      --ring: rgba(255,255,255,0.12);
+      --ring-2: rgba(251,146,60,0.35);
+      --max: 1120px;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    a { color: #ffedd5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max); margin:0 auto; padding: 0 20px; }
 
+    header { position: sticky; top:0; z-index: 10; background: linear-gradient(180deg, rgba(251,146,60,0.10), rgba(0,0,0,0)); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav { display:flex; align-items:center; justify-content: space-between; padding: 14px 0; }
+    .brand { display:flex; gap:12px; align-items:center; font-weight:700; }
+    .logo { width:38px; height:38px; border-radius:10px; background: radial-gradient(120px 80px at 20% 20%, var(--accent), var(--accent-2)); display:grid; place-items:center; color:#1a120e; font-weight:900; box-shadow: 0 4px 12px rgba(251,146,60,.35); }
 
-header { position: sticky; top:0; z-index: 10; background: linear-gradient(180deg, rgba(251,146,60,0.10), rgba(0,0,0,0)); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.nav { display:flex; align-items:center; justify-content: space-between; padding: 14px 0; }
-.brand { display:flex; gap:12px; align-items:center; font-weight:700; }
-.logo { width:38px; height:38px; border-radius:10px; background: radial-gradient(120px 80px at 20% 20%, var(--accent), var(--accent-2)); display:grid; place-items:center; color:#1a120e; font-weight:900; box-shadow: 0 4px 12px rgba(251,146,60,.35); }
+    .hero { padding: 70px 0 46px; text-align:center; background: radial-gradient(80% 60% at 50% -10%, rgba(251,146,60,0.25), rgba(0,0,0,0)), linear-gradient(180deg, rgba(245,158,11,0.10), rgba(0,0,0,0)); }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height:1.06; margin:16px auto 12px; max-width: 22ch; }
+    .subtitle { color: var(--muted); max-width: 70ch; margin: 0 auto 22px; font-size: 18px; }
 
+    .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius: 14px; border: 1px solid var(--ring-2); font-weight:700; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#1a120e; box-shadow:0 8px 20px rgba(251,146,60,.35); }
+    .btn.secondary { background: transparent; color: var(--text); border:1px solid var(--ring); box-shadow:none; }
 
-.hero { padding: 70px 0 46px; text-align:center; background: radial-gradient(80% 60% at 50% -10%, rgba(251,146,60,0.25), rgba(0,0,0,0)), linear-gradient(180deg, rgba(245,158,11,0.10), rgba(0,0,0,0)); }
-h1 { font-size: clamp(32px, 5vw, 54px); line-height:1.06; margin:16px auto 12px; max-width: 22ch; }
-.subtitle { color: var(--muted); max-width: 65ch; margin: 0 auto 22px; font-size: 18px; }
+    .eyebrow { display:inline-block; font-size:12px; letter-spacing:.14em; color: var(--muted); text-transform: uppercase; padding:8px 12px; border:1px solid var(--ring); border-radius:999px; }
 
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px auto; }
+    .card { background: var(--card); border:1px solid var(--ring); border-radius: var(--radius); padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,.25); }
+    .chip { display:inline-flex; padding:6px 10px; border-radius: 999px; font-size:12px; border:1px solid var(--ring-2); color:#fff; background: linear-gradient(135deg, rgba(251,146,60,.25), rgba(245,158,11,.15)); }
+    .card h3 { margin: 10px 0 8px; font-size: 22px; }
+    .card p { color: var(--muted); }
 
-.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-top:34px; }
-.card { background: var(--card); border:1px solid var(--ring); border-radius: var(--radius); padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,.25); }
+    .split { display:grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: center; margin: 64px 0; }
+    .panel { background: var(--panel); border:1px solid var(--ring); border-radius: var(--radius); padding: 24px; }
+    .list { list-style: none; padding:0; margin: 0; display:grid; gap: 10px; }
+    .li { display:flex; gap:12px; align-items:flex-start; }
+    .dot { width:10px; height:10px; border-radius:50%; background: var(--ok); margin-top: 8px; flex: none; }
 
+    .pricing { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 22px 0 10px; }
+    .price { background: linear-gradient(180deg, rgba(251,146,60,.10), rgba(26,18,14,1)); border:1px solid var(--ring-2); }
+    .price h4 { margin:0 0 6px; font-size: 20px; }
+    .big { font-size: 42px; font-weight: 800; }
 
-.badge { display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius: 999px; font-size:12px; border:1px solid var(--ring-2); color:#fff; background: linear-gradient(135deg, rgba(251,146,60,.25), rgba(245,158,11,.15)); }
+    .faq { display:grid; gap:12px; }
+    details { background: var(--panel); border:1px solid var(--ring); border-radius: 12px; padding: 14px 16px; }
+    details>summary { cursor:pointer; font-weight:600; }
+    details>p { color: var(--muted); margin-top: 10px; }
 
+    .pay-grid { display:flex; flex-wrap:wrap; gap:8px; }
+    .pill { border:1px solid var(--ring); padding:8px 10px; border-radius:999px; background:#1a120e; color:#ffe9d6; font-size:13px; }
 
-.btn { display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius: 14px; border: 1px solid var(--ring-2); font-weight:700; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#1a120e; box-shadow:0 8px 20px rgba(251,146,60,.35); }
-.btn.secondary { background: transparent; color: var(--text); border:1px solid var(--ring); box-shadow:none; }
+    footer { margin-top: 64px; border-top:1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(251,146,60,0.08), rgba(0,0,0,0)); }
+    .legal { color: var(--muted); font-size: 12px; }
 
-
-.list { list-style: none; padding:0; margin: 0; display:grid; gap: 10px; }
-.dot { width:10px; height:10px; border-radius:50%; background: var(--ok); margin-top: 8px; flex: none; }
-
-
-.pricing { margin-top: 30px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
-.price-item { background: linear-gradient(180deg, rgba(251,146,60,.10), rgba(26,18,14,1)); border:1px solid var(--ring-2); border-radius: var(--radius); padding: 20px; }
-
-
-.note { background: #2a1b13; border-left: 4px solid var(--accent); padding:12px 14px; border-radius: 12px; color:#ffe9d6; }
-
-
-.pay-grid { display:flex; flex-wrap:wrap; gap:8px; }
-.pill { border:1px solid var(--ring); padding:8px 10px; border-radius:999px; background:#1a120e; color:#ffe9d6; font-size:13px; }
-
-
-footer { margin-top: 64px; border-top:1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(251,146,60,0.08), rgba(0,0,0,0)); }
-.legal { color: var(--muted); font-size: 12px; }
-</style>
+    /* Responsive */
+    @media (max-width: 980px){ .cards{ grid-template-columns:1fr; } .split{ grid-template-columns:1fr; } .pricing{ grid-template-columns:1fr; } }
+  </style>
 </head>
 <body>
-<header>
-<div class="container nav">
-<div class="brand">
-<div class="logo">AR</div>
-<div>AestheticRxRGV — Aesthetics & Telehealth</div>
-</div>
-<div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-<a class="btn" href="tel:+19564046294">Call or Text (956) 404‑6294</a>
-<a class="btn secondary" href="mailto:aestheticrxrgv@gmail.com">Email</a>
-</div>
-</div>
-</header>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">AR</div>
+        <div>AestheticRxRGV — Aesthetics & Telehealth</div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <a class="btn" href="tel:+19564046294">Call or Text (956) 404‑6294</a>
+        <a class="btn secondary" href="mailto:aestheticrxrgv@gmail.com">Email</a>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">Mission, Texas · Owned & operated by Joe Garcia, APRN, NP‑C</span>
+      <h1>Enhance. Restore. Revitalize.</h1>
+      <p class="subtitle">AestheticRxRGV is a boutique <strong>aesthetic practice</strong> specializing in <strong>Botox®</strong> and <strong>IV Infusion Therapy</strong>, with convenient <strong>Telehealth</strong> for common medical conditions.</p>
+      <div class="cta-row">
+        <a class="btn" href="#services">View Services</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
 
-<main class="container">
-<section class="hero">
-<div class="card">
- <h3>Telehealth Visits</h3>
- <p>Affordable and convenient telemedicine consultations for common medical issues. Available same day across Texas.</p>
- <p><strong>Flat Rate:</strong> $50 per visit</p>
- <ul class="list">
- <li><span class="dot"></span>Weight loss</li>
- <li><span class="dot"></span>Migraine</li>
- <li><span class="dot"></span>Dehydration & Hangover</li>
- <li><span class="dot"></span>High blood pressure</li>
- <li><span class="dot"></span>Erectile dysfunction</li>
- <li><span class="dot"></span>Rashes, allergies, infections</li>
- <li><span class="dot"></span>Flu, cough, sore throat</li>
- <li><span class="dot"></span>UTI, yeast infections, contraception</li>
- <li><span class="dot"></span>Lab orders</li>
- </ul>
- </div>
- </div>
- </section>
+      <div class="cards">
+        <article class="card">
+          <span class="chip">Aesthetics</span>
+          <h3>Botox® / Dysport® injections</h3>
+          <p>Personalized dosing and facial mapping for frown lines, forehead, crow’s feet, and more. Treatment typically 10–20 minutes.</p>
+          <p><strong>Price:</strong> $10 per unit</p>
+          <p><strong>Availability:</strong> Every <strong>Saturday</strong> after <strong>2:30 PM</strong>. Call or text <a href="tel:+19564046294">(956) 404‑6294</a> to schedule.</p>
+        </article>
+        <article class="card">
+          <span class="chip">Wellness</span>
+          <h3>IV infusion therapy</h3>
+          <p>Evidence‑informed hydration and vitamin drips. Physician/NP‑led protocols with screening for safety and appropriateness.</p>
+          <p><strong>Price:</strong> $99–$179 depending on formula</p>
+        </article>
+        <article class="card">
+          <span class="chip">Telehealth</span>
+          <h3>Telemedicine consults</h3>
+          <p>Affordable and convenient video visits for common conditions, refills, and lab orders. Available same‑day across Texas.</p>
+          <p><strong>Flat rate:</strong> $50 per visit</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="services" class="split">
+      <div class="panel">
+        <h2>Why choose AestheticRxRGV</h2>
+        <ul class="list">
+          <li class="li"><span class="dot"></span><div>Licensed, insured clinician with advanced training in injectables and telehealth.</div></li>
+          <li class="li"><span class="dot"></span><div>Transparent menu pricing and upfront consent—no surprises.</div></li>
+          <li class="li"><span class="dot"></span><div>Medical‑grade supplies and protocols; HIPAA‑compliant intake and EMR.</div></li>
+          <li class="li"><span class="dot"></span><div>Located in Mission, Texas; serving the Rio Grande Valley. Telehealth available statewide where licensed.</div></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0">Telehealth conditions treated</h3>
+        <ul class="list">
+          <li class="li"><span class="dot"></span><div>Weight loss</div></li>
+          <li class="li"><span class="dot"></span><div>Migraine</div></li>
+          <li class="li"><span class="dot"></span><div>Hangover</div></li>
+          <li class="li"><span class="dot"></span><div>Dehydration</div></li>
+          <li class="li"><span class="dot"></span><div>High blood pressure</div></li>
+          <li class="li"><span class="dot"></span><div>Erectile dysfunction</div></li>
+          <li class="li"><span class="dot"></span><div>Rashes</div></li>
+          <li class="li"><span class="dot"></span><div>Seasonal allergies</div></li>
+          <li class="li"><span class="dot"></span><div>Tooth infection</div></li>
+          <li class="li"><span class="dot"></span><div>Ear infection</div></li>
+          <li class="li"><span class="dot"></span><div>Eye infection</div></li>
+          <li class="li"><span class="dot"></span><div>Flu / influenza</div></li>
+          <li class="li"><span class="dot"></span><div>Sore throat</div></li>
+          <li class="li"><span class="dot"></span><div>Cough</div></li>
+          <li class="li"><span class="dot"></span><div>Constipation</div></li>
+          <li class="li"><span class="dot"></span><div>Nausea / vomiting</div></li>
+          <li class="li"><span class="dot"></span><div>Lab orders</div></li>
+          <li class="li"><span class="dot"></span><div>Urinary tract infection</div></li>
+          <li class="li"><span class="dot"></span><div>Contraception</div></li>
+          <li class="li"><span class="dot"></span><div>Yeast infections</div></li>
+        </ul>
+      </div>
+    </section>
 
- <section id="contact" style="margin-top:50px;">
- <h2>Contact</h2>
- <p>📍 Located in Mission, Texas<br>
- 📞 Phone: <a href="tel:+19564046294">(956) 404-6294</a><br>
- ✉️ Email: <a href="mailto:aestheticrxrgv@gmail.com">aestheticrxrgv@gmail.com</a></p>
- <p class="legal">AestheticRxRGV · Botox® · IV Infusion Therapy · Telehealth · Owned and operated by Joe Garcia, APRN, NP-C · Serving the Rio Grande Valley</p>
- </section>
- </main>
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <p class="subtitle">Simple rates. Pay per visit—no memberships needed. HSA/FSA receipts available.</p>
+      <div class="pricing">
+        <div class="card price">
+          <h4>Botox® / Neurotoxin</h4>
+          <div class="big">$10<span style="font-size:18px">/unit</span></div>
+          <p class="legal">Typical area 10–20 units. Final dose individualized after consultation.</p>
+        </div>
+        <div class="card price">
+          <h4>IV Infusions</h4>
+          <div class="big">$99–$179</div>
+          <p class="legal">Includes evaluation, vitals, and post‑care instructions.</p>
+        </div>
+        <div class="card price">
+          <h4>Telemedicine Visit</h4>
+          <div class="big">$50</div>
+          <p class="legal">Most visits 15–20 minutes. Prescriptions and labs when appropriate.</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:14px;">
+        <strong>Payment methods accepted:</strong>
+        <div class="pay-grid" aria-label="Payment methods">
+          <span class="pill">Visa</span>
+          <span class="pill">Mastercard</span>
+          <span class="pill">American Express</span>
+          <span class="pill">Discover</span>
+          <span class="pill">Cash</span>
+          <span class="pill">Cash App</span>
+          <span class="pill">Zelle</span>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact" class="split" style="margin-top:34px;">
+      <div class="panel">
+        <h2>Contact</h2>
+        <p>📍 Located in <strong>Mission, Texas</strong></p>
+        <p>📞 <strong>Call or Text:</strong> <a href="tel:+19564046294">(956) 404‑6294</a><br>
+           ✉️ <strong>Email:</strong> <a href="mailto:aestheticrxrgv@gmail.com">aestheticrxrgv@gmail.com</a></p>
+        <p class="legal">AestheticRxRGV · Botox® · IV Infusion Therapy · Telehealth · Owned and operated by Joe Garcia, APRN, NP‑C · Serving the Rio Grande Valley</p>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0">Notices</h3>
+        <p class="legal">Telehealth available only in states where we are licensed. Injections/IVs performed in‑office after medical screening and informed consent. This site does not provide emergency services.</p>
+      </div>
+    </section>
+  </main>
 
- <footer>
- <div class="container">
- <p class="legal">© <span id="y"></span> AestheticRxRGV. All rights reserved.</p>
- </div>
- </footer>
- <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <footer>
+    <div class="container">
+      <p class="legal">© <span id="y"></span> AestheticRxRGV. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+  </script>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "AestheticRxRGV",
+    "url": "https://aestheticrxrgv-ai.github.io/brightline-site/",
+    "description": "Botox, IV Infusions, and Telehealth visits in Mission, Texas.",
+    "telephone": "+1-956-404-6294",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mission",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "medicalSpecialty": ["Dermatology", "PrimaryCare", "CosmeticSurgery"],
+    "areaServed": "Rio Grande Valley; telehealth available where licensed",
+    "openingHours": ["Sa 14:30-18:00"]
+  }
+  </script>
 </body>
 </html>
